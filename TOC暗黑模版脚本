@@ -1,0 +1,21 @@
+<script>
+    if (localStorage.getItem('v') != '2.0.0.4') {
+        localStorage.clear();
+        sessionStorage.clear();
+        const cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i];
+            const eqPos = cookie.indexOf("=");
+            const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+            document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+        }
+        let themesData_default = [{"id":"dark","name":"暗影黑","url":"/assets/theme/toc_theme_dark.css","code":"dark","c1":"#202020","c2":"#16b777","author":"TOC"},{"id":"light","name":"白月光","url":"","code":"light","c1":"#ffffff","c2":"#333A42","author":"TOC"}].filter(i => i.id == 'dark')[0];
+        localStorage.setItem('theme', JSON.stringify({
+            id: themesData_default.id,
+            url: themesData_default.url
+        }));
+        localStorage.setItem('v', '2.0.0.4')
+    }
+</script>
+
+<!--最新完整版13301371671-->
