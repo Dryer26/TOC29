@@ -17,5 +17,3 @@
         localStorage.setItem('v', '2.0.0.4')
     }
 </script>
-
-<!--最新完整版13301371671-->
